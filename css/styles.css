@@ -1,0 +1,682 @@
+/* 1 - COMMON STYLES
+   2 - SECTIONS
+     2.1 HEADER
+        2.1.1 DROPDOWN
+     2.2 BANNER
+     2.3 SPECIAL CATEGORY
+     2.4 DISCOUNT
+     2.5 DELIVERY
+     2.6 PRODUCTS
+*/
+
+/********************************************* 1 COMMON STYLES *************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.header-container {
+  width: 90%;
+  margin: auto;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 25px;
+  background-color: #fff9;
+}
+.section-title {
+  font-size: 80px;
+  margin-bottom: 10px;
+  color: #1f740d;
+}
+.section-header .H-line {
+  display: block;
+  width: 100px;
+  margin: auto;
+  height: 20px;
+  background-color: #b0f611;
+  transition: width 0.5s;
+  border-radius: 50px 0 50px 0;
+}
+.section-header:hover .H-line {
+  width: 300px;
+}
+
+.common-padding {
+  padding: 40px 0;
+}
+
+/********************************************* 2.1 Header ******************************************************/
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.header-content img {
+  flex: 1;
+  max-width: 100px;
+}
+
+.xbx {
+  border-left: 3px solid #161616;
+  padding-left: 20px;
+}
+
+.header-content nav {
+  flex: 3;
+  text-align: center;
+}
+
+.header-content ul li {
+  display: inline-block;
+}
+
+.header-content .icons {
+  flex: 1;
+  text-align: right;
+}
+
+.header-content .icons ul li {
+  padding: 10px;
+}
+
+.header-content ul li a {
+  color: black;
+}
+
+.header-content nav ul li .link-item {
+  padding: 10px 10px;
+  display: block;
+  position: relative;
+}
+
+.header-content nav ul li .link-item:after,
+.header-content nav ul li .link-item.active:after,
+.header-content .icons ul li .icons-item:after {
+  content: "";
+  width: 0;
+  height: 3px;
+  display: block;
+  background-color: rgb(0, 172, 238);
+  border-radius: 20px;
+  margin-top: 2px;
+  transition: 0.5s;
+}
+
+.header-content nav ul li .link-item.active:after {
+  width: 100%;
+}
+
+.header-content nav ul li .link-item:hover:after,
+.header-content .icons ul li .icons-item:hover:after {
+  width: 100%;
+}
+
+.header-content nav ul li .link-item:hover i,
+.header-content .icons ul li .icons-item:hover i {
+  color: rgb(0, 172, 238);
+}
+
+/************************************************ 2.1.1 DROPDOWN **********************************************/
+
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  width: 450px;
+  border: 2px solid rgb(0, 172, 238);
+  background-color: #161616;
+  padding: 15px;
+  margin-top: 5px;
+  transform: scale(0);
+  transition: transform 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+}
+.dropdown:hover .dropdown-menu {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+}
+.dropdown-menu ul {
+  display: table-cell;
+  text-align: left;
+}
+.dropdown-menu ul li:first-child a {
+  display: block;
+  border-bottom: 1px dotted rgb(0, 172, 238);
+  margin-bottom: 10px;
+  color: white;
+}
+.dropdown-menu ul li {
+  line-height: 1.7;
+}
+
+.dropdown-menu ul li a {
+  color: white;
+}
+
+.dropdown-menu ul li a:hover {
+  color: rgb(0, 172, 238);
+}
+
+/************************************************* 2.2 BANNER *****************************************************/
+
+.main-content img {
+  width: 100%;
+}
+
+.main-content {
+  position: relative;
+}
+
+.banner img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation-name: imagefade;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+
+@keyframes imagefade {
+  0% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.banner img:nth-of-type(1) {
+  animation-delay: 6s;
+}
+.banner img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+.banner img:nth-of-type(3) {
+  animation-delay: 2s;
+}
+.banner img:nth-of-type(4) {
+  animation-delay: 0;
+}
+
+.banner-info {
+  position: relative;
+  z-index: 2;
+
+  padding: 150px 0;
+}
+
+.banner-info h2 {
+  text-transform: uppercase;
+  font-size: 50px;
+  color: rgb(0, 172, 238);
+}
+
+.banner-info p {
+  font-size: 30px;
+  color: white;
+}
+
+.banner-info span {
+  display: block;
+  color: white;
+}
+
+.custom-btn {
+  margin: 20px;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* 3 */
+.btn-3 {
+  background: rgb(0, 172, 238);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 238, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover {
+  background: transparent;
+  box-shadow: none;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:hover {
+  color: rgba(2, 126, 251, 1);
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+}
+
+/************************************************* 2.3 PS5*********************************************/
+
+.ps5-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+}
+
+.ps5-item-info {
+  flex: 2;
+}
+
+.ps5-item {
+  flex: 3;
+  padding: 10px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.ps5-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scalex(0);
+}
+
+.ps5-item:hover .ps5-item-overlay {
+  transform: scalex(1);
+}
+
+.ps5-item img {
+  width: 90%;
+}
+
+.ps5-item-info .ps5-title {
+  font-size: 40px;
+}
+
+.ps5-item-info .ps5-desc {
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+/* 16 */
+.btn-16 {
+  border: none;
+  color: #000;
+}
+.btn-16:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+  transition: all 0.3s ease;
+}
+.btn-16:hover {
+  color: #000;
+}
+.btn-16:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+.btn-16:active {
+  top: 2px;
+}
+
+.ps-5-btn {
+  align-items: center;
+}
+
+/* cover ***********************************************************************************/
+
+/********************************************* Games **************************************************/
+
+.games {
+  background-image: url(../images/stray.webp);
+  background-size: cover;
+  height: 600px;
+  position: relative;
+}
+
+.games-items {
+  display: flex;
+  flex-direction: row;
+  padding-top: 280px;
+}
+
+.games-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info span {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.game-info {
+  flex: 1;
+  flex-direction: row;
+  padding: 10px 20px;
+}
+
+.item-1 {
+  background-image: url(../images/games1.webp);
+  background-size: cover;
+}
+
+.item-2 {
+  margin: 0px 5%;
+  background-image: url(../images/games2.webp);
+  background-size: cover;
+  background-position: 370px 0px;
+}
+
+.item-3 {
+  background-image: url(../images/games3.webp);
+  background-size: cover;
+}
+
+.games-item {
+  flex: 1;
+  height: 200px;
+  width: 25%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 4px 5px 4px 1px;
+  transition: transform 0.5s;
+}
+
+.games-item img {
+  width: 100%;
+}
+
+.games-item:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: rgb(0, 0, 0.7) 1px 2px 5px 1px;
+}
+
+.games-intro {
+  position: absolute;
+  width: 40%;
+  color: white;
+  padding: 15px 0;
+}
+
+.games-intro .spn,
+.games-intro h2 {
+  font-size: 40px;
+}
+
+.games-intro p {
+  color: #fff9;
+  font-size: 20px;
+}
+
+/* 8 */
+.btn-8 {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-8 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #c797eb;
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.btn-8:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-8:hover:before {
+  height: 100%;
+}
+.btn-8:hover:after {
+  width: 100%;
+}
+.btn-8:hover {
+  background: transparent;
+}
+.btn-8 span:hover {
+  color: #c797eb;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.btn-8 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-8 span:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-8 span:hover:before {
+  height: 100%;
+}
+.btn-8 span:hover:after {
+  width: 100%;
+}
+
+/* XBOX *************************************************************/
+
+.xbox {
+  padding: 40px 0 0 0;
+}
+.xbox-bg {
+  height: 750px;
+  background-image: url(../images/xbox\ series.jpg);
+  background-size: cover;
+  background-position: center 0px;
+  background-repeat: no-repeat;
+}
+
+.xbox-desc {
+  height: 200px;
+  background-color: rgba(211, 209, 209, 0.553);
+}
+
+.xbox-items-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.xbox-item-info {
+  flex: 1;
+  text-align: center;
+}
+
+.xbox-item-info h2 {
+  font-size: 35px;
+  color: #1f740d;
+}
+
+.xbox-item-info p {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.xbox-item-info a {
+  color: #155209;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.xbox-item-info a:hover {
+  text-decoration: underline;
+}
+
+/* All Access ******************************************************************************/
+.all-access-infos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+}
+
+.all-access-bg {
+  height: 550px;
+  background-image: url(../images/all\ access.jpg);
+  background-size: cover;
+}
+
+.all-access-info img {
+  width: 60px;
+ 
+  
+}
+
+.all-access-info {
+  text-align: center;
+  padding: 20px 10px;
+  flex: auto;
+}
+
+.all-access-title {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding: 15px 0;
+}
+
+.all-access-title h2 {
+  font-size: 45px;
+  padding: 10px;
+}
+
+.all-access-title p {
+  font-size: 20px;
+}
