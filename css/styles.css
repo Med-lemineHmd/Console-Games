@@ -16,7 +16,14 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 .container {
   width: 80%;
   margin: auto;
@@ -698,7 +705,52 @@ a {
 /* controller ************************************************************/
 .controller:hover {
   transform: scale(1.1);
-  transition: all 0.5s;
+  transition: transform 2s;
+}
+
+/* best selling ***********************************************************/
+.best-selling {
+  margin: 150px 0 100px 0;
+}
+
+.best-selling-items {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+.best-selling-items img {
+  width: 100%;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.best-selling-item-subtitle {
+  color: gray;
+  font-weight: normal;
+}
+.best-selling-item-title {
+  font-size: 19px;
+}
+.best-selling-item {
+  position: relative;
+}
+.best-selling-item .icon {
+  width: 30px;
+  height: 30px;
+  background-color: #b0f611;
+  color: #fff;
+  text-align: center;
+  display: block;
+  line-height: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1;
+}
+.best-selling-item:hover .icon {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* products *****************************************************************/
@@ -743,17 +795,18 @@ a {
 
 .product-img {
   transition: transform .5s;
+  padding: 30px;
 }
 
 .product-img img {
   flex-flow: row wrap;
   max-width: 280px;
   max-height: 280px;
-  padding: 20px;
   cursor: pointer;
   align-items: center;
   display: flex;
   row-gap: 20px;
+  padding: 10px 0;
 }
 
 .product-img img:hover {
@@ -836,4 +889,119 @@ a {
   -webkit-transform: rotateX(-90deg);
   -moz-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
+}
+
+
+.numbers-items {
+  position: relative;
+  background-image: url(../images/ps5-console-covers-keyart-01-en-06dec21.webp);
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.parent {
+  overflow: auto;
+  padding-top: 130px;
+}
+
+.number-item-child {
+  width: 25%;
+  float: left;
+  text-align: center;
+  padding: 60px;
+}
+
+.number-item-child .icon {
+  color: rgb(0, 172, 238);
+  font-size: 50px;
+}
+
+.number-item-title,
+.number-item-para {
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+
+/* footer **************************************************************/
+.footer {
+  background-color: rgb(4, 75, 146);
+  text-align: center;
+  height: 300px;
+  padding: 40px 0;
+  display: grid;
+}
+
+.footer-items {
+  overflow: auto;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.footer-item.mg {
+  text-align: justify;
+  color: #e9e7e6;
+}
+
+.footer-item h3 {
+  margin-bottom: 10px;
+  color: #F1F1F1;
+}
+
+.footer-item {
+  float: left;
+  width: 30%;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 40px 0 20px 0;
+}
+
+.footer-links li {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.footer-links li a {
+  display: block;
+}
+
+.footer-links a i {
+  line-height: 40px;
+  color: rgb(4, 75, 146);
+  font-size: 25px;
+}
+
+.footer-links li:after {
+  position: absolute;
+  content: "";
+  opacity: 0;
+  transition: 0.3s;
+  background-color: #b6b4b4;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0%;
+  bottom: 0;
+}
+.footer-links li:hover:after {
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 50%;
+}
+.footer p {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #F1F1F1;
 }
