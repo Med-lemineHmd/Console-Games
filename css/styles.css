@@ -38,12 +38,12 @@ a {
 .section-header {
   text-align: center;
   margin-bottom: 25px;
-  background-color: #fff9;
 }
 .section-title {
   font-size: 80px;
   margin-bottom: 10px;
   color: #1f740d;
+  margin-top: -150px;
 }
 .section-header .H-line {
   display: block;
@@ -589,6 +589,10 @@ a {
 }
 
 /* XBOX *************************************************************/
+.xbox-header {
+  height: 100px;
+  background-color: rgba(211, 209, 209, 0.553);
+}
 
 .xbox {
   padding: 40px 0 0 0;
@@ -629,8 +633,9 @@ a {
 
 .xbox-item-info a {
   color: #155209;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .xbox-item-info a:hover {
@@ -655,8 +660,6 @@ a {
 
 .all-access-info img {
   width: 60px;
- 
-  
 }
 
 .all-access-info {
@@ -679,4 +682,149 @@ a {
 
 .all-access-title p {
   font-size: 20px;
+}
+
+.all-access-title a {
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 40px;
+  color: #155209;
+}
+
+.all-access-title a:hover {
+  text-decoration: underline;
+}
+
+/* controller ************************************************************/
+.controller:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+/* products *****************************************************************/
+.products {
+  margin: 150px 0 100px 0;
+}
+.list-product {
+  display: flex;
+  justify-content: center;
+}
+
+.list-product li {
+  margin: 10px 20px;
+}
+
+.list-product > li:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  display: block;
+  background-color: rgba(0, 172, 238, 1);
+  margin-top: 2px;
+  transition: 0.5s;
+}
+
+.list-product > li:hover:after {
+  width: 100%;
+}
+
+.products-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-img {
+  flex: 1;
+  transition: transform .5s;
+}
+
+.product-img img {
+  width: 250px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.product-img img:hover {
+  transform: scale(1.1);
+}
+
+.product-info span {
+  display: block;
+  margin: 5px 0;
+}
+
+.product-info i {
+  margin-top: 10px;
+}
+
+/* 12 */
+.btn-12 {
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+}
+.btn-12 span {
+  background: rgb(0, 172, 238);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 238, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn-12 span:nth-child(1) {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12:hover span:nth-child(1) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.btn-12:hover span:nth-child(2) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
 }
